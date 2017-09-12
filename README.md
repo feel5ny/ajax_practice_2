@@ -1,3 +1,61 @@
+# Backlog
+backlog
+* Eslint맞추서진행하기
+* 주석작성하기
+
+1. 환경셋팅
+2. html layout짜기
+3. Json 스키마 2가지 추가
+4. server.js에서 스키마 조정
+5. 기능 (및 프로세스)
+    1. addBtn
+        1. form이 리스트 하단에 추가
+        2. 입력값을 받음
+        3. check버튼 클릭
+            1. input.value를 main.js에서 받음
+            2. main.js에서 ajax.js를 이용해서 server.js에 post로 뿌림
+            3. json에 추가
+            4. 추가된 것 중 마지막 리스트만 하단에 넣어줌
+                1. 혹은 다시 그려줘야하나?
+        4. 입력도중 취소버튼 누르면 form태그 삭제됨
+        * 고려해야할 부분
+            1. 추가 등록 버튼 누르지 않은 상태에서 새로고침을 누를 경우 다시 reload
+            2. 중간 번호가 삭제되면, 리스트 숫자중 가장 큰 숫자에 +1하여 등록할 수 있도록
+                1. 그래야 마지막 리스트가 삭제 되어도 추가될 때 마지막 리스트의 번호+1이 된다.
+            3. 글을 써주지 않을 경우 (title value가 없을 경우)
+                1. title input이 focus되면서, placeholder로 메세지 알림
+            4. Price가 입력될 때 000앞에 쉼표 넣기
+    2. editBtn
+        1. 프로세스
+            1. 해당 value값이 들어있는 form태그가 그려짐
+            2. 수정 후에 다시 json에 put으로 넘김
+            3. 넘긴 json중 해당 데이터를 뿌림
+        2. 고려해야할 사항
+            1. 버튼 누르면, cancel 버튼 활성화
+                1. tbody에 이벤트핸들러를 달아놓고 
+                2. 이벤트객체의 타겟 : 이벤트를 발생시킨 놈
+                    1. e.target.nodeName : 태그네임
+                3. data-item으로 id값을 셀렉한다.
+                4. e.target.dataset.type(type혹은 item)
+                5. type에 따라서 작동할 수 있도록 switch사용
+    3. delBtn
+        1. 해당 리스트 filter로 삭제
+---
+참고
+1. init_ Ajax콜을 진행한다. (table구조를 렌더) 
+2. bindBooksToDom() (react는 이 행위를 자동으로 해준다) : 상태와 dom을 일치시켜주는 역할
+3. makeHtmlTableRow > 2가지 경우를 둔다. (수정할때와 안할때. 이걸 가르는 기준은 editable)
+4. 수정버튼 : 이벤트 델리게이션
+    1. tbody에 이벤트핸들러를 달아놓고 
+    2. 이벤트객체의 타겟 : 이벤트를 발생시킨 놈
+        1. e.target.nodeName : 태그네임
+    3. data-item으로 id값을 셀렉한다.
+    4. e.target.dataset.type(type혹은 item)
+    5. type에 따라서 작동할 수 있도록 switch사용
+    6. add할때 아무것도 안넣을 경우 title input에 focus
+
+
+<hr>
 # 1. Front-end Set-up
 
 ## 1.1 Dependency
