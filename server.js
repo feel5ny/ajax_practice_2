@@ -14,7 +14,7 @@ const dbPath = path.join(__dirname, '/data/books.json');
 // handlebars
 app.engine('handlebars', exphbs({ defaultLayout: false }));
 app.set('view engine', 'handlebars');
-// Static File Service
+// Static File Service\
 app.use(express.static('public'));
 // Body Parser
 // parse application/x-www-form-urlencoded
@@ -107,7 +107,9 @@ app.put('/books/:id', (req, res) => {
       if (err) throw err;
 
       result.success = true;
-      res.json(result);
+      // const { books } = JSON.parse(data);
+      // res.json(result);
+      res.json(json);
     });
   });
 });
@@ -141,4 +143,4 @@ app.delete('/books/:id', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('app listening on http://localhost:3000'));
+app.listen(3001, () => console.log('app listening on http://localhost:3001'));
