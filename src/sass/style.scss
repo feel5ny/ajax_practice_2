@@ -4,3 +4,12 @@ $res-color: #6900FF;
 #res {
   color: $res-color;
 }
+
+#tableHead{
+  display: flex;
+  justify-content: space-between;
+}
+
+#addBtn{
+  color:red;
+}
