@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {{!-- <link rel="stylesheet" href="/css/semantic.css"> --}}
+  <title>AJAX CRUD_hardCase</title>
+</head>
+<body>
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="ten wide column">
+      <h1 class="ui header">
+        Simple Book List
+        <div class="sub header">2017/09/12 ~ 9/13</div>
+      </h1>
+        <table class="ui celled striped table">
+        <thead>
+          <tr>
+            <th colspan="11" id="tableHead">Simple Book List
+              <button class="ui icon inverted olive button" id="addBtn">+</button>
+            </th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th colspan="1">#</th>
+            <th colspan="2">title</th>
+            <th colspan="2">Author</th>
+            <th colspan="2">Price</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody id ="insertList"></tbody>
+      </table>
+    </div>
+    <div class="three wide column"></div>
+  </div>
+  <script src="js/app.bundle.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="/js/app.bundle.js"></script>
+  {{!-- <script src="/js/semantic.min.js"></script> --}}
+</body>
+</html>
